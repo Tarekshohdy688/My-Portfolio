@@ -172,13 +172,32 @@
             white-space: nowrap;
         }
 
+        .skills {
+            order: 10;
+        }
+
         .project-link {
-            position: static;
-            background: rgba(15, 23, 42, 0.04);
-            padding: 8px 12px;
+            order: 30;
+            margin-top: 20px;
+            align-self: flex-start;
+            background: transparent;
+            padding: 0;
+            font-size: 0;
+        }
+
+        .project-link .skill {
+            background: rgba(2, 132, 199, 0.08);
+            color: #0369a1;
             border-radius: 999px;
-            font-size: 0.85rem;
-            color: #475569;
+            padding: 8px 12px;
+            font-size: 0.88rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .project-link .skill i {
+            color: #0369a1;
         }
 
         .project-link a {
