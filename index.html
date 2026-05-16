@@ -126,15 +126,27 @@
             flex: 1 1 60%;
             min-width: 200px;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .publication-subtitle {
+            display: flex;
             align-items: center;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .publication-conference-inline {
             font-size: 0.95rem;
             color: #334155;
             font-weight: 500;
+        }
+
+        .publication-authors {
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.5;
         }
 
         .publication-meta {
@@ -540,33 +552,82 @@
             <div class="publication-header">
                 <div class="publication-title">
                     <span>Model-and Data-Based Control of Self-Balancing Robots: Practical Educational Approach with LabVIEW and Arduino</span>
-                    <a href="https://arxiv.org/pdf/2405.03561" class="publication-paper-link" target="_blank" rel="noreferrer" aria-label="View paper">
-                        <i class="fas fa-file-pdf"></i>
-                    </a>
-                    <span class="publication-conference-inline"> <b>Conference: </b>18th IFAC (International Federation of Automatic Control) Conference on Programmable Devices and Embedded Systems (PDeS)</span>
+                    <div class="publication-subtitle">
+                        <a href="https://arxiv.org/pdf/2405.03561" class="publication-paper-link" target="_blank" rel="noreferrer" aria-label="View paper">
+                            <i class="fas fa-file-pdf"></i>
+                        </a>
+                        <span class="publication-conference-inline"> <b>Conference: </b>18th IFAC (International Federation of Automatic Control) Conference on Programmable Devices and Embedded Systems (PDeS)</span>
+                    </div>
+                    <span class="publication-authors">Authors: Tarek Shohdy, Coauthor Name</span>
                 </div>
                 <div class="publication-meta">May 2024</div>
             </div>
             <div class="publication-images">
-                <img src="Projects/Publications/Paper1/1.png" alt="Publication image 1">
-                <img src="Projects/Publications/Paper1/2.png" alt="Publication image 2">
-                <img src="Projects/Publications/Paper1/3.png" alt="Publication image 3">
+                <img src="Projects/Publications/IFAC/1.png" alt="Publication image 1">
+                <img src="Projects/Publications/IFAC/2.png" alt="Publication image 2">
+                <img src="Projects/Publications/IFAC/3.png" alt="Publication image 3">
             </div>
         </div>
         <div class="publication-card">
             <div class="publication-header">
                 <div class="publication-title">
-                    <span>Another Publication Title</span>
-                    <a href="#" class="publication-paper-link" target="_blank" rel="noreferrer" aria-label="View paper">
-                        <i class="fas fa-file-pdf"></i>
-                    </a>
-                    <span class="publication-conference-inline">Conference or Symposium Name</span>
+                    <span>Implementing PID Controller on a hand follower robot using Numerical Methods</span>
+                    <div class="publication-subtitle">
+                        <a href="https://arxiv.org/pdf/2503.02673" class="publication-paper-link" target="_blank" rel="noreferrer" aria-label="View paper">
+                            <i class="fas fa-file-pdf"></i>
+                        </a>
+                        <span class="publication-conference-inline"> <b>Journal: </b>arXiv preprint arXiv:2503.02673</span>
+                    </div>
+                    <span class="publication-authors">Authors: Tarek Shohdy, Coauthor Name</span>
                 </div>
-                <div class="publication-meta">Aug 2024</div>
+                <div class="publication-meta">Mar 2025</div>
             </div>
             <div class="publication-images">
-                <img src="https://via.placeholder.com/400x240?text=Chart+1" alt="Publication chart 1">
-                <img src="https://via.placeholder.com/400x240?text=Chart+2" alt="Publication chart 2">
+                <img src="Projects/Publications/Ga3fary/1.png" alt="Publication image 1">
+                <img src="Projects/Publications/Ga3fary/2.png" alt="Publication image 2">
+                <img src="Projects/Publications/Ga3fary/3.png" alt="Publication image 3">
+                <img src="Projects/Publications/Ga3fary/4.png" alt="Publication image 4">
+            </div>
+        </div>
+        <div class="publication-card">
+            <div class="publication-header">
+                <div class="publication-title">
+                    <span>Development of a PPO-Reinforcement Learned Walking Tripedal Soft-Legged Robot using SOFA</span>
+                    <div class="publication-subtitle">
+                        <a href="https://arxiv.org/pdf/2504.09242" class="publication-paper-link" target="_blank" rel="noreferrer" aria-label="View paper">
+                            <i class="fas fa-file-pdf"></i>
+                        </a>
+                        <span class="publication-conference-inline"> <b>Journal: </b>arXiv preprint arXiv:2504.09242</span>
+                    </div>
+                    <span class="publication-authors">Authors: Tarek Shohdy, Coauthor Name</span>
+                </div>
+                <div class="publication-meta">Apr 2025</div>
+            </div>
+            <div class="publication-images">
+                <img src="Projects/Publications/IROS/1.png" alt="Publication image 1">
+                <img src="Projects/Publications/IROS/2.png" alt="Publication image 2">
+                <img src="Projects/Publications/IROS/3.png" alt="Publication image 3">
+            </div>
+        </div>
+        <div class="publication-card">
+            <div class="publication-header">
+                <div class="publication-title">
+                    <span>A Reproducible Simulation Workflow for ISO-Inspired Hybrid Wheeled-Legged Wheelchair Using URDF and PyBullet</span>
+                    <div class="publication-subtitle">
+                        <a href="https://easychair.org/smart-program/SMiLE2026/2026-02-10.html#talk:303654" class="publication-paper-link" target="_blank" rel="noreferrer" aria-label="View paper">
+                            <i class="fas fa-file-pdf"></i>
+                        </a>
+                        <span class="publication-conference-inline"> <b>Conference: </b>2ND INTERNATIONAL CONFERENCE ON SMART MOBILITY AND LOGISTICS ECOSYSTEMS (SMiLE) 2026</span>
+                    </div>
+                    <span class="publication-authors">Authors: Tarek Shohdy, Coauthor Name</span>
+                </div>
+                <div class="publication-meta">Feb 2026</div>
+            </div>
+            <div class="publication-images">
+                <img src="Projects/Publications/SMiLE/3.png" alt="Publication image 3">
+                <img src="Projects/Publications/SMiLE/4.png" alt="Publication image 4">
+                <img src="Projects/Publications/SMiLE/5.png" alt="Publication image 5">
+                <img src="Projects/Publications/SMiLE/6.png" alt="Publication image 6">
             </div>
         </div>
     </div>
