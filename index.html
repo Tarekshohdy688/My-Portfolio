@@ -93,6 +93,83 @@
             letter-spacing: -0.03em;
         }
 
+        .publications {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .publication-card {
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid rgba(148, 163, 184, 0.24);
+            border-radius: 20px;
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+            padding: 26px 26px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .publication-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .publication-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #111827;
+            flex: 1 1 60%;
+            min-width: 200px;
+        }
+
+        .publication-meta {
+            font-size: 0.92rem;
+            color: #475569;
+            min-width: 120px;
+            text-align: right;
+        }
+
+        .publication-conference {
+            font-size: 0.95rem;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .publication-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .publication-images img {
+            width: calc(50% - 7px);
+            min-width: 140px;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+        }
+
+        @media (max-width: 760px) {
+            .publication-header {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: left;
+            }
+
+            .publication-meta {
+                text-align: left;
+            }
+
+            .publication-images img {
+                width: 100%;
+            }
+        }
+
         .projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -401,6 +478,7 @@
     </div>
     <nav class="tabs">
         <a href="#about-me">About me</a>
+        <a href="#publications">Publications</a>
         <a href="#robotics">Robotics</a>
         <a href="#mechanical-design">Mechanical Design</a>
         <a href="#automatic-control">Automatic Control</a>
@@ -415,6 +493,34 @@
         <p class="section-intro-text">
             Tarek Eissa is a passionate and dedicated robotics enthusiast. Especially, he is interested in Multi-Robot System, Aerial Robotics and Dexterous Manipulation using ROS architecture including the whole process in between: mechanical design, computer vision, control, software implementation, and hardware deployment. Here is a glimse of the work he has done so far during his academic and freelancing journey categorized according to its relevance in a chronological order.
         </p>
+    </div>
+</section>
+
+<section id="publications">
+    <h2 class="section-title">Publications</h2>
+    <div class="publications">
+        <div class="publication-card">
+            <div class="publication-header">
+                <div class="publication-title">Title of Research Paper</div>
+                <div class="publication-meta">Jan 2025</div>
+            </div>
+            <div class="publication-conference">Conference Name or Journal Title</div>
+            <div class="publication-images">
+                <img src="https://via.placeholder.com/400x240?text=Figure+1" alt="Publication figure 1">
+                <img src="https://via.placeholder.com/400x240?text=Figure+2" alt="Publication figure 2">
+            </div>
+        </div>
+        <div class="publication-card">
+            <div class="publication-header">
+                <div class="publication-title">Another Publication Title</div>
+                <div class="publication-meta">Aug 2024</div>
+            </div>
+            <div class="publication-conference">Conference or Symposium Name</div>
+            <div class="publication-images">
+                <img src="https://via.placeholder.com/400x240?text=Chart+1" alt="Publication chart 1">
+                <img src="https://via.placeholder.com/400x240?text=Chart+2" alt="Publication chart 2">
+            </div>
+        </div>
     </div>
 </section>
 
