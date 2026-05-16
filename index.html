@@ -132,6 +132,33 @@
             color: #475569;
             min-width: 120px;
             text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .publication-paper-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(2, 132, 199, 0.12);
+            color: #0369a1;
+            text-decoration: none;
+            border: 1px solid rgba(2, 132, 199, 0.18);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .publication-paper-link:hover {
+            background: rgba(2, 132, 199, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .publication-paper-link i {
+            font-size: 1rem;
         }
 
         .publication-conference {
@@ -501,10 +528,15 @@
     <div class="publications">
         <div class="publication-card">
             <div class="publication-header">
-                <div class="publication-title">Title of Research Paper</div>
-                <div class="publication-meta">Jan 2025</div>
+                <div class="publication-title">Model-and Data-Based Control of Self-Balancing Robots: Practical Educational Approach with LabVIEW and Arduino</div>
+                <div class="publication-meta">
+                    <span>Jan 2025</span>
+                    <a href="https://arxiv.org/pdf/2405.03561" class="publication-paper-link" target="_blank" rel="noreferrer" aria-label="View paper">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
+                </div>
             </div>
-            <div class="publication-conference">Conference Name or Journal Title</div>
+            <div class="publication-conference"> <b>Conference</b>: 18th IFAC (International Federation of Automatic Control) Conference on Programmable Devices and Embedded Systems (PDeS)</div>
             <div class="publication-images">
                 <img src="https://via.placeholder.com/400x240?text=Figure+1" alt="Publication figure 1">
                 <img src="https://via.placeholder.com/400x240?text=Figure+2" alt="Publication figure 2">
@@ -513,7 +545,12 @@
         <div class="publication-card">
             <div class="publication-header">
                 <div class="publication-title">Another Publication Title</div>
-                <div class="publication-meta">Aug 2024</div>
+                <div class="publication-meta">
+                    <span>Aug 2024</span>
+                    <a href="#" class="publication-paper-link" target="_blank" rel="noreferrer" aria-label="View paper">
+                        <i class="fas fa-file-pdf"></i>
+                    </a>
+                </div>
             </div>
             <div class="publication-conference">Conference or Symposium Name</div>
             <div class="publication-images">
