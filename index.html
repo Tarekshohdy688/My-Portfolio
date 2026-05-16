@@ -11,238 +11,272 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #eef2f7;
+            color: #1f2937;
             scroll-behavior: smooth;
         }
 
         header {
             position: fixed;
             top: 0;
-            width: 100%;
-            height: 100px;
-            background-color: #333;
-            color: white;
+            left: 0;
+            right: 0;
+            height: 78px;
+            background-color: #111827;
+            color: #ffffff;
             display: flex;
             align-items: center;
-            justify-content: space-evenly;
-            padding: 0 0px;
+            justify-content: space-between;
+            padding: 0 24px;
             z-index: 1000;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
         }
 
-        header div img.profile-photo {
-            height: 95px;
-            width: 75px;
-            border-radius: 80%;
-            margin-right: 40px;
-            vertical-align: middle;
-        }
-
-        header div:first-child {
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        header .tabs {
+        .header-brand {
             display: flex;
-            gap: 20px;
+            align-items: center;
+            gap: 14px;
+            font-size: 20px;
+            font-weight: 700;
         }
 
-        header .tabs a {
-            color: white;
+        .profile-photo {
+            height: 64px;
+            width: 64px;
+            border-radius: 18px;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .tabs a {
+            color: #e5e7eb;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            padding: 10px 20px;
-            border: 2px solid transparent;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            background: linear-gradient(145deg, #444, #222);
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4), -2px -2px 5px rgba(255, 255, 255, 0.1);
+            font-weight: 600;
+            font-size: 15px;
+            padding: 10px 16px;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            transition: all 0.25s ease;
+            background: rgba(255, 255, 255, 0.06);
         }
 
-        header .tabs a:hover {
-            color: #00ccff;
-            border-color: #00ccff;
-            box-shadow: 0px 0px 10px #00ccff, 0px 0px 30px #00ccff inset;
-            background: linear-gradient(145deg, #222, #444);
+        .tabs a:hover,
+        .tabs a:focus-visible {
+            color: #7dd3fc;
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.12);
         }
 
-        header .tabs a:active {
-            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.6), inset -2px -2px 5px rgba(255, 255, 255, 0.2);
+        .tabs a:active {
+            transform: translateY(1px);
         }
 
         section {
-            padding: 80px 50px;
+            padding: 120px 24px 70px;
+            max-width: 1180px;
+            margin: 0 auto;
+            scroll-margin-top: 98px;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 42px;
+            font-size: 2.2rem;
+            letter-spacing: -0.03em;
         }
 
         .projects {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
         }
 
         .project {
-            position: relative; /* Required for positioning the date inside the project card */
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px 15px 30px; /* Increased bottom padding to make space for the date */
-            width: 200px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            position: relative;
+            border: 1px solid rgba(148, 163, 184, 0.24);
+            border-radius: 20px;
+            padding: 22px 22px 36px;
+            background: #ffffff;
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .project-date {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 12px;
-            color: #666;
-            background-color: rgba(255, 255, 255, 0.7); /* Optional: adds a light background to the date */
-            padding: 2px 5px;
-            border-radius: 5px;
-        }
-
-        .project-link {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            font-size: 12px;
-            color: #666;
-            background-color: rgba(255, 255, 255, 0.7); /* Optional: adds a light background to the date */
-            padding: 2px 5px;
-            border-radius: 5px;
-        }
-
-        .project-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 5px; /* Reduce the space between the title and organization */
-            text-align: center;
-            display: flex;
-            align-items: center; /* Align title and flag horizontally */
-            justify-content: center; /* Center content horizontally */
-        }
-
-        .country-logo {
-            height: 20px; /* Adjust size as necessary */
-            width: auto;
-            margin-right: 10px; /* Space between logo and title */
-        }
-
-        .project-organization {
-            font-size: 14px;
-            color: #666;
-            text-align: center;
-            margin-top: 0; /* Remove extra space from top */
-            text-decoration: underline; /* Underline the organization text */
-        }
-
-        .project-description {
-            font-size: 14px;
-            color: #666;
-            text-align: center; /* Ensure the description is centered */
+            align-items: flex-start;
+            text-align: left;
         }
 
         .project:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 22px 42px rgba(15, 23, 42, 0.15);
+        }
+
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            line-height: 1.2;
+        }
+
+        .country-logo {
+            height: 22px;
+            width: auto;
+        }
+
+        .project-organization {
+            font-size: 0.95rem;
+            color: #475569;
+            margin: 0 0 12px;
+            text-decoration: underline;
+        }
+
+        .project-description {
+            font-size: 0.96rem;
+            line-height: 1.65;
+            color: #475569;
+            margin-bottom: 16px;
+        }
+
+        .project-footer {
+            margin-top: auto;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .project-date,
+        .project-link {
+            position: static;
+            background: rgba(15, 23, 42, 0.04);
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        .project-link a {
+            color: #0284c7;
+        }
+
+        .project-link a:hover {
+            text-decoration: underline;
         }
 
         .gallery {
             position: relative;
             width: 100%;
-            height: 300px; /* Fixed height */
+            min-height: 220px;
             overflow: hidden;
-            border-radius: 8px;
-            background-color: #000;
+            border-radius: 16px;
+            background-color: #0f172a;
             display: flex;
+            align-items: center;
             justify-content: center;
-            align-items: center; /* Center content vertically */
+            margin-bottom: 14px;
         }
 
         .gallery-items {
             display: flex;
-            transition: transform 0.5s ease;
-            width: 100%; /* Ensures the width is 100% of the gallery container */
-            align-items: center; /* Center the items vertically */
+            transition: transform 0.45s ease;
+            width: 100%;
         }
 
         .gallery img,
         .gallery video {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensure the media fill the container without distortion */
-            display: block; /* Ensure proper layout behavior */
+            object-fit: cover;
         }
-
 
         .gallery-nav {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 10px;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 5px;
+            font-size: 18px;
+            width: 36px;
+            height: 36px;
+            color: #ffffff;
+            background-color: rgba(15, 23, 42, 0.72);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
             z-index: 10;
-            user-select: none;
-            visibility: hidden; /* Hide arrows by default */
         }
 
         .gallery:hover .gallery-nav {
-            visibility: visible; /* Show arrows when hovering over the gallery */
+            display: flex;
         }
 
         .gallery-nav.left-arrow {
-            left: 10px;
+            left: 12px;
         }
 
         .gallery-nav.right-arrow {
-            right: 10px;
+            right: 12px;
         }
 
-        /* Styles for skills section */
         .skills {
             margin-top: 10px;
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            justify-content: center;
+            justify-content: flex-start;
         }
 
         .skill {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            font-size: 14px;
-            color: #333;
+            font-size: 0.85rem;
+            color: #334155;
+            background: #f8fafc;
+            border-radius: 999px;
+            padding: 8px 10px;
         }
 
         .skill i {
             margin-right: 8px;
-            color: #00ccff;
+            color: #0ea5e9;
         }
 
-        #about-me,
-        #contact-me {
-            padding: 50px 20px;
-            background-color: #f4f4f4;
+        .section--highlight {
+            background-color: #f8fafc;
+            padding: 120px 24px 70px;
         }
 
-        .about-me-content,
+        .section--centered {
+            text-align: center;
+        }
+
+        .section-intro {
+            max-width: 940px;
+            margin: 0 auto 18px;
+        }
+
+        .section-intro-text {
+            font-size: 1rem;
+            color: #475569;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.75;
+        }
+
         .contact-me-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
@@ -258,78 +292,94 @@
         }
 
         .contact-me-content ul li a {
-            color: #00ccff;
+            color: #0284c7;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
         }
 
         .contact-me-content ul li a:hover {
-            color: #0077cc;
+            color: #0b75b8;
         }
 
-        .container {
-        display: flex;
-        flex-wrap: wrap;
-        }
-
-        .item {
-        flex: 1 1 100%; /* Full width on small screens */
-        }
-
-        @media (min-width: 768px) {
-        .item {
-            flex: 1 1 50%; /* Half width on tablets/PC */
-        }
-        }
         #toggle-view {
             position: fixed;
-            top: 100px;
-            left: 10px;
+            top: 86px;
+            right: 24px;
             z-index: 1001;
-            padding: 10px 10px;
-            background-color: #007BFF;
+            padding: 10px 18px;
+            background-color: #0284c7;
             color: white;
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 999px;
+            font-size: 14px;
             cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            /* transform: scale(1.0547); */
-            transform-origin: top left;
-            width: 98.5%;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-        }
-        
-        #toggle-view:hover {
-            background-color: #0056b3;
+            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.25);
+            width: auto;
         }
 
+        #toggle-view:hover {
+            background-color: #0369a1;
+        }
+
+        @media (max-width: 960px) {
+            header {
+                padding: 0 16px;
+                height: auto;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            section {
+                padding: 110px 18px 60px;
+            }
+            .tabs {
+                justify-content: center;
+            }
+            .gallery {
+                min-height: 200px;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .tabs a {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+            .project {
+                padding: 18px;
+            }
+            .gallery {
+                min-height: 180px;
+            }
+            #toggle-view {
+                top: 82px;
+                right: 16px;
+                font-size: 13px;
+                padding: 10px 14px;
+            }
+        }
 
     </style>
 </head>
 <body>
-
-
-    
 <header>
-    <div>
+    <div class="header-brand">
         <img src="Linkedin.jpg" alt="My Photo" class="profile-photo">
-        Tarek Shohdy
+        <span>Tarek Shohdy</span>
     </div>
-    <div class="tabs">
+    <nav class="tabs">
         <a href="#about-me">About me</a>
         <a href="#robotics">Robotics</a>
         <a href="#mechanical-design">Mechanical Design</a>
         <a href="#automatic-control">Automatic Control</a>
         <a href="#contact-me">Contact me</a>
-        </div>
+    </nav>
 </header>
 <button id="toggle-view">Switch to Desktop View</button>
-
-<section id="about-me" style="background-color: #f4f4f4; padding: 120px 20px; margin-bottom: -50px;">
-    <div style="text-align: center;">
+<main>
+<section id="about-me" class="section--highlight section--centered">
+    <div class="section-intro">
         <h2>About Me</h2>
-        <p style="font-size: 18px; color: #333; max-width: 1500px; margin: 0 10px;">
+        <p class="section-intro-text">
             Tarek Eissa is a passionate and dedicated robotics enthusiast. Especially, he is interested in Multi-Robot System, Aerial Robotics and Dexterous Manipulation using ROS architecture including the whole process in between: mechanical design, computer vision, control, software implementation, and hardware deployment. Here is a glimse of the work he has done so far during his academic and freelancing journey categorized according to its relevance in a chronological order.
         </p>
     </div>
@@ -2239,11 +2289,10 @@
 </section>
 
 <!-- Contact Me Section -->
-</section>
-<section id="contact-me" style="background-color: #f4f4f4; padding: 50px 20px;">
-    <div style="text-align: center;">
+<section id="contact-me" class="section--highlight section--centered">
+    <div class="section-intro">
         <h2>Contact Me</h2>
-        <p style="font-size: 18px; color: #333; max-width: 800px; margin: 0 auto;">
+        <p class="section-intro-text">
             If you would like to get in touch, feel free to reach out to me via email or LinkedIn. I am open to new opportunities and collaborations!
         </p>
         <div style="margin-top: 20px;">
@@ -2256,52 +2305,57 @@
         </div>
     </div>
 </section>
+</main>
 <script>
     // Gallery functionality
+    const toggleButton = document.getElementById("toggle-view");
+
     document.querySelectorAll('.gallery').forEach(gallery => {
         const items = gallery.querySelector('.gallery-items');
         const leftArrow = gallery.querySelector('.left-arrow');
         const rightArrow = gallery.querySelector('.right-arrow');
-        const toggleButton = document.getElementById("toggle-view");
         let index = 0;
 
         function updateGallery() {
             const itemWidth = gallery.offsetWidth;
-            items.style.transform = `translateX(-${index * itemWidth}px)`; 
+            items.style.transform = `translateX(-${index * itemWidth}px)`;
         }
 
-        leftArrow.addEventListener('click', () => {
-            index = (index > 0) ? index - 1 : items.children.length - 1;
-            updateGallery();
-        });
-
-        rightArrow.addEventListener('click', () => {
-            index = (index < items.children.length - 1) ? index + 1 : 0;
-            updateGallery();
-        });
-        
-        toggleButton.addEventListener("click", () => {
-            let metaTag = document.querySelector("meta[name=viewport]");
-            
-            if (metaTag) {
-                const currentContent = metaTag.getAttribute("content");
-                
-                // Check if it’s currently in mobile view
-                if (currentContent.includes("width=device-width")) {
-                    // Switch to desktop view
-                    metaTag.setAttribute("content", "width=1400");
-                    toggleButton.textContent = "Switch to Mobile View";
-                } else {
-                    // Switch back to mobile view
-                    metaTag.setAttribute("content", "width=device-width, initial-scale=1");
-                    toggleButton.textContent = "Switch to Desktop View";
-                }
-            }
+        if (leftArrow) {
+            leftArrow.addEventListener('click', () => {
+                index = (index > 0) ? index - 1 : items.children.length - 1;
+                updateGallery();
             });
-        window.addEventListener('resize', updateGallery);
+        }
 
+        if (rightArrow) {
+            rightArrow.addEventListener('click', () => {
+                index = (index < items.children.length - 1) ? index + 1 : 0;
+                updateGallery();
+            });
+        }
+
+        window.addEventListener('resize', updateGallery);
         updateGallery();
     });
+
+    if (toggleButton) {
+        toggleButton.addEventListener("click", () => {
+            const metaTag = document.querySelector("meta[name=viewport]");
+            if (!metaTag) {
+                return;
+            }
+
+            const currentContent = metaTag.getAttribute("content") || "";
+            if (currentContent.includes("width=device-width")) {
+                metaTag.setAttribute("content", "width=1400");
+                toggleButton.textContent = "Switch to Mobile View";
+            } else {
+                metaTag.setAttribute("content", "width=device-width, initial-scale=1");
+                toggleButton.textContent = "Switch to Desktop View";
+            }
+        });
+    }
 </script>
 
 </body>
