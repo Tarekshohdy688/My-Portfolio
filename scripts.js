@@ -1,4 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const navItems = document.querySelectorAll(".timeline-item");
+    const sectionIds = ["about-me", "education", "conferences", "videos", "contact-me"];
+    const sections = sectionIds
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                navItems.forEach(item => item.classList.remove("active"));
+
+                const activeLink = document.querySelector(
+                    `.timeline-item[href="#${entry.target.id}"]`
+                );
+                if (activeLink) {
+                    activeLink.classList.add("active");
+                }
+            });
+        },
+        {
+            root: null,
+            threshold: 0.5
+        }
+    );
+
+    sections.forEach(section => observer.observe(section));
     const toggleButton = document.getElementById("toggle-view");
 
     document.querySelectorAll(".gallery").forEach(gallery => {
