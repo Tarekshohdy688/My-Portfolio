@@ -7,379 +7,11 @@
     <!-- Add FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.6.0/css/flag-icon.min.css"> <!-- Include Flag Icon Library -->
+    <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
     <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <i class="ai ai-google-scholar"></i>
-    <link rel="stylesheet" href="styles.css">
-    <!-- <style>
-        body {
-            margin: 0;
-            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: #eef2f7;
-            color: #1f2937;
-            scroll-behavior: smooth;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            min-height: 96px;
-            background-color: #111827;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 24px;
-            z-index: 1000;
-            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
-        }
-
-        .header-brand {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        .profile-photo {
-            height: 80px;
-            width: 80px;
-            border-radius: 20px;
-            object-fit: cover;
-            object-position: center;
-            border: 2px solid rgba(255, 255, 255, 0.18);
-            transform: scale(1.15);
-        }
-
-        .tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-        }
-
-        .tabs a {
-            color: #e5e7eb;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            padding: 12px 20px;
-            border: 2px solid rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            background: rgba(255, 255, 255, 0.08);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .tabs a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent 0%, rgba(125, 211, 252, 0.3) 50%, transparent 100%);
-            transition: left 0.5s ease;
-            z-index: 0;
-        }
-
-        .tabs a > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .tabs a:hover::before {
-            left: 100%;
-        }
-
-        .tabs a:hover,
-        .tabs a:focus-visible {
-            color: #ffffff;
-            border-color: rgba(125, 211, 252, 0.6);
-            background: linear-gradient(135deg, rgba(2, 132, 199, 0.2) 0%, rgba(2, 132, 199, 0.1) 100%);
-            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .tabs a:active {
-            transform: translateY(0px);
-        }
-
-        section {
-            padding: 120px 24px 70px;
-            max-width: 1180px;
-            margin: 0 auto;
-            scroll-margin-top: 110px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 42px;
-            font-size: 2.2rem;
-            letter-spacing: -0.03em;
-        }
-
-        .section--highlight {
-            background-color: rgba(248, 250, 252, 0.8);
-            border-radius: 20px;
-        }
-
-        .section--centered {
-            text-align: center;
-        }
-
-        .section-intro {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .section-intro h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #111827;
-        }
-
-        .section-intro-text {
-            font-size: 1rem;
-            color: #475569;
-            max-width: 900px;
-            margin: 0 auto;
-            line-height: 1.75;
-        }
-
-        .videos-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
-            align-items: start;
-        }
-
-        .video-card {
-            padding: 10px;
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-
-            /* responsive aspect ratio */
-            aspect-ratio: 16 / 9;
-
-            height: auto;
-            padding: 0;
-
-            overflow: hidden;
-            border-radius: 12px;
-            background: #000;
-        }
-
-        .video-preview,
-        .video-preview img,
-        .video-container iframe {
-            position: absolute;
-            inset: 0;
-
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-        }
-
-        .video-info {
-            padding: 12px 6px 4px;
-        }
-
-        .video-title {
-            font-size: 0.9rem;
-            line-height: 1.35;
-        }
-
-        .video-card:hover .video-title {
-            color: #0284c7;
-        }
-
-        .video-description {
-            font-size: 0.9rem;
-            color: #64748b;
-            line-height: 1.6;
-            transition: color 0.3s ease;
-        }
-
-        .video-card:hover .video-description {
-            color: #475569;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 20px 24px;
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            border: 2px solid rgba(2, 132, 199, 0.2);
-            border-radius: 16px;
-            text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 8px 24px rgba(2, 132, 199, 0.1);
-            min-width: 260px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(2, 132, 199, 0.1) 0%, rgba(2, 132, 199, 0.05) 100%);
-            transition: left 0.4s ease;
-            z-index: 0;
-        }
-
-        .contact-link:hover::before {
-            left: 0;
-        }
-
-        .contact-link:hover {
-            border-color: rgba(2, 132, 199, 0.5);
-            box-shadow: 0 16px 40px rgba(2, 132, 199, 0.25);
-            transform: translateY(-6px);
-        }
-
-        .contact-icon-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-            border-radius: 12px;
-            color: #ffffff;
-            font-size: 24px;
-            flex-shrink: 0;
-            box-shadow: 0 8px 16px rgba(2, 132, 199, 0.3);
-            transition: all 0.3s ease;
-            z-index: 1;
-        }
-
-        .contact-link:hover .contact-icon-box {
-            transform: scale(1.12) rotate(5deg);
-            box-shadow: 0 12px 24px rgba(2, 132, 199, 0.4);
-        }
-
-        .contact-text {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            z-index: 1;
-        }
-
-        .contact-label {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #111827;
-        }
-
-        .contact-detail {
-            font-size: 0.85rem;
-            color: #0284c7;
-            font-weight: 500;
-        }
-
-        .contact-link:hover .contact-label {
-            color: #0284c7;
-        }
-
-        #toggle-view {
-            position: fixed;
-            top: 108px;
-            right: 24px;
-            z-index: 1001;
-            padding: 10px 18px;
-            background-color: #0284c7;
-            color: white;
-            border: none;
-            border-radius: 999px;
-            font-size: 14px;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.25);
-            width: auto;
-        }
-        .play-button {
-            width: 52px;
-            height: 52px;
-            font-size: 18px;
-        }
-
-        @media (max-width: 960px) {
-            header {
-                flex-direction: column;
-                min-height: auto;
-                gap: 16px;
-            }
-
-            .tabs {
-                width: 100%;
-            }
-
-            .tabs a {
-                padding: 8px 14px;
-                font-size: 13px;
-            }
-
-            section {
-                padding: 80px 18px 50px;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .videos-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            #toggle-view {
-                top: 140px;
-                right: 18px;
-            }
-        }
-
-        @media (max-width: 680px) {
-            .tabs a {
-                padding: 10px 12px;
-                font-size: 14px;
-            }
-
-            #toggle-view {
-                top: 82px;
-                right: 16px;
-                font-size: 13px;
-                padding: 10px 14px;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            section {
-                padding: 100px 16px 40px;
-            }
-            .videos-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-    </style> -->
 </head>
 <body>
 <header>
@@ -407,6 +39,51 @@
         </p>
     </div>
 </section>
+
+<section id="conferences" class="section--highlight section--centered">
+  <h2 class="section-title">Conferences</h2>
+
+  <div class="conferences-grid">
+    <a class="conference-card" href="https://example.com" target="_blank" rel="noopener noreferrer">
+
+      <div class="conference-stack">
+        <img src="Projects/Conferences/SMiLE/1.jpg" alt="Conference flashcard 1" class="stack-card stack-1">
+        <img src="Projects/Conferences/SMiLE/2.jpg" alt="Conference flashcard 2" class="stack-card stack-2">
+        <img src="Projects/Conferences/SMiLE/3.jpg" alt="Conference flashcard 3" class="stack-card stack-3">
+        <img src="Projects/Conferences/SMiLE/4.jpg" alt="Conference flashcard 4" class="stack-card stack-4">
+        <img src="Projects/Conferences/SMiLE/5.jpg" alt="Conference flashcard 5" class="stack-card stack-5">
+        <img src="Projects/Conferences/SMiLE/6.jpg" alt="Conference flashcard 6" class="stack-card stack-6">
+        <img src="Projects/Conferences/SMiLE/7.jpg" alt="Conference flashcard 7" class="stack-card stack-7">
+      </div>
+
+      <div class="conference-text">
+        <div class="conference-title">SMiLE 2026</div>
+        <div class="conference-subtitle">Second International Conference on Smart Mobility and Logistics Ecosystems</div>
+        <div class="conference-subsubtitle"><i class="fas fa-location-dot"></i> King Fahd University (KFUPM) in Kingdom of Saudi Arabia (KSA)</div>
+      </div>
+    </a>
+
+    <a class="conference-card" href="https://example.com" target="_blank" rel="noopener noreferrer">
+
+      <div class="conference-stack">
+        <img src="Projects/Conferences/IROS/1.jpg" alt="Conference flashcard 1" class="stack-card stack-1">
+        <img src="Projects/Conferences/IROS/2.jpg" alt="Conference flashcard 2" class="stack-card stack-2">
+        <img src="Projects/Conferences/IROS/3.jpg" alt="Conference flashcard 3" class="stack-card stack-3">
+        <img src="Projects/Conferences/IROS/4.jpg" alt="Conference flashcard 4" class="stack-card stack-4">
+        <img src="Projects/Conferences/IROS/5.jpg" alt="Conference flashcard 5" class="stack-card stack-5">
+        <img src="Projects/Conferences/IROS/6.jpg" alt="Conference flashcard 6" class="stack-card stack-6">
+        <img src="Projects/Conferences/IROS/7.jpg" alt="Conference flashcard 7" class="stack-card stack-7">
+    </div>
+
+      <div class="conference-text">
+        <div class="conference-title">IROS 2025</div>
+        <div class="conference-subtitle">International Conference on Intelligent Robots and Systems</div>
+        <div class="conference-subsubtitle"><i class="fas fa-location-dot"></i> Hangzhou, China</div>
+      </div>
+    </a>
+  </div>
+</section>
+
 <section id="videos" class="section--highlight section--centered">
   <h2 class="section-title">Featured Videos</h2>
 

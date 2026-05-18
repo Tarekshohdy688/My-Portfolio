@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".video-preview").forEach(preview => {
         const button = preview.querySelector(".play-button");
-
+        
         const loadVideo = () => {
             const videoId = preview.dataset.videoId;
             if (!videoId) return;
