@@ -952,6 +952,137 @@ body {
             font-size: 0.92rem;
             color: #475569;
         }
+
+        .education-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .education-strip {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 24px;
+
+            width: 95%;
+
+            padding: 10px;
+
+            border-radius: 24px;
+
+            background: linear-gradient(
+                135deg,
+                rgba(255,255,255,0.78) 0%,
+                rgba(248,250,252,0.72) 100%
+            );
+
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+
+            border: 2px solid rgba(2,132,199,0.15);
+
+            box-shadow:
+                0 16px 40px rgba(15,23,42,0.08),
+                0 0 0 1px rgba(2,132,199,0.08);
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+        }
+
+        .education-strip:hover {
+            transform: translateY(-6px);
+
+            border-color: rgba(2,132,199,0.35);
+
+            box-shadow:
+                0 24px 48px rgba(2,132,199,0.18);
+        }
+
+        .education-main {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .education-logo {
+            width: 78px;
+            height: 78px;
+
+            object-fit: contain;
+
+            border-radius: 18px;
+
+            background: rgba(255,255,255,0.8);
+
+            padding: 8px;
+
+            flex-shrink: 0;
+        }
+
+        .education-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .education-degree {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .education-school {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .education-cgpa {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0284c7;
+        }
+
+        .education-date {
+            position: absolute;
+
+            top: 22px;
+            right: 24px;
+
+            background: rgba(15,23,42,0.06);
+
+            padding: 8px 14px;
+
+            border-radius: 999px;
+
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        @media (max-width: 760px) {
+            .education-strip {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .education-main {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .education-date {
+                position: static;
+                margin-bottom: 12px;
+            }
+        }
+
        @media (max-width: 960px) {
             header {
                 flex-direction: column;
