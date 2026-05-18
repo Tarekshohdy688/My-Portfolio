@@ -1066,6 +1066,32 @@ body {
             color: #475569;
         }
 
+
+        .publication-abstract {
+            margin-top: 14px;
+
+            padding: 16px 18px;
+
+            border-radius: 16px;
+
+            background: rgba(2,132,199,0.06);
+
+            border-left: 4px solid rgba(2,132,199,0.55);
+
+            font-size: 0.95rem;
+
+            line-height: 1.75;
+
+            color: #475569;
+
+            text-align: justify;
+        }
+
+        .publication-abstract b {
+            color: #111827;
+        }
+
+
         @media (max-width: 760px) {
             .education-strip {
                 flex-direction: column;
