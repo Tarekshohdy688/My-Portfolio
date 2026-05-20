@@ -268,12 +268,19 @@ body {
             gap: 14px;
         }
 
-        .publication-images img {
+        .publication-images img,
+        .publication-images video {
             flex: 1 1 180px;
             min-width: 140px;
             border-radius: 16px;
             object-fit: cover;
             box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+        }
+
+        .publication-images video {
+            display: block;
+            width: 100%;
+            height: auto;
         }
 
         @media (max-width: 760px) {
