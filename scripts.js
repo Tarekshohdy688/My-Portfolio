@@ -109,4 +109,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
         preview.addEventListener("click", loadVideo);
     });
+
+    const conferenceModal = document.getElementById("conference-modal");
+    const conferenceModalImg = document.getElementById("conference-modal-img");
+    const conferenceModalCaption = document.getElementById("conference-modal-caption");
+    const conferenceModalClose = document.getElementById("conference-modal-close");
+
+    const closeConferenceModal = () => {
+        conferenceModal.classList.remove("open");
+        conferenceModal.setAttribute("aria-hidden", "true");
+        conferenceModalImg.src = "";
+        conferenceModalImg.alt = "";
+        conferenceModalCaption.textContent = "";
+    };
+
+    document.querySelectorAll(".conference-stack .stack-card").forEach(image => {
+        image.addEventListener("click", event => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const src = image.src;
+            const alt = image.alt || "Conference image";
+            conferenceModalImg.src = src;
+            conferenceModalImg.alt = alt;
+            conferenceModalCaption.textContent = alt;
+            conferenceModal.classList.add("open");
+            conferenceModal.setAttribute("aria-hidden", "false");
+        });
+    });
+
+    conferenceModal.addEventListener("click", event => {
+        if (event.target === conferenceModal || event.target === conferenceModalClose) {
+            closeConferenceModal();
+        }
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && conferenceModal.classList.contains("open")) {
+            closeConferenceModal();
+        }
+    });
 });
