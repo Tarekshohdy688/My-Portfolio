@@ -1230,6 +1230,40 @@ body {
             color: #ffffff;
         }
 
+        .Internship-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #8a1616;
+        }
+
+        .Internship-location {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .Internship-description {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #000000;
+        }
+
+        .Internship-date {
+            position: absolute;
+
+            top: 22px;
+            right: 24px;
+
+            background: rgba(15,23,42,0.06);
+
+            padding: 8px 14px;
+
+            border-radius: 999px;
+
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
         @media (max-width: 760px) {
             .education-strip {
                 flex-direction: column;
@@ -1242,6 +1276,10 @@ body {
             }
 
             .education-date {
+                position: static;
+                margin-bottom: 12px;
+            }
+            .Internship-date {
                 position: static;
                 margin-bottom: 12px;
             }
