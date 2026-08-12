@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const navItems = document.querySelectorAll(".timeline-item");
-    const sectionIds = ["about-me", "education", "conferences", "videos", "contact-me"];
+    const sectionIds = ["about-me", "education", "summer-school", "conferences", "videos", "contact-me"];
     const sections = sectionIds
         .map(id => document.getElementById(id))
         .filter(Boolean);
@@ -115,6 +115,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const conferenceModalCaption = document.getElementById("conference-modal-caption");
     const conferenceModalClose = document.getElementById("conference-modal-close");
 
+    const summerSchoolModal = document.getElementById("summer-school-modal");
+    const summerSchoolModalImg = document.getElementById("summer-school-modal-img");
+    const summerSchoolModalCaption = document.getElementById("summer-school-modal-caption");
+    const summerSchoolModalClose = document.getElementById("summer-school-modal-close");
+
     const closeConferenceModal = () => {
         conferenceModal.classList.remove("open");
         conferenceModal.setAttribute("aria-hidden", "true");
@@ -123,7 +128,15 @@ document.addEventListener("DOMContentLoaded", () => {
         conferenceModalCaption.textContent = "";
     };
 
-    document.querySelectorAll(".conference-stack .stack-card").forEach(image => {
+    const closeSummerSchoolModal = () => {
+        summerSchoolModal.classList.remove("open");
+        summerSchoolModal.setAttribute("aria-hidden", "true");
+        summerSchoolModalImg.src = "";
+        summerSchoolModalImg.alt = "";
+        summerSchoolModalCaption.textContent = "";
+    };
+
+    document.querySelectorAll("#conferences .conference-image").forEach(image => {
         image.addEventListener("click", event => {
             event.preventDefault();
             event.stopPropagation();
@@ -138,15 +151,41 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    document.querySelectorAll("#summer-school .summer-school-image").forEach(image => {
+        image.addEventListener("click", event => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            const src = image.src;
+            const alt = image.alt || "Summer school image";
+            summerSchoolModalImg.src = src;
+            summerSchoolModalImg.alt = alt;
+            summerSchoolModalCaption.textContent = alt;
+            summerSchoolModal.classList.add("open");
+            summerSchoolModal.setAttribute("aria-hidden", "false");
+        });
+    });
+
     conferenceModal.addEventListener("click", event => {
         if (event.target === conferenceModal || event.target === conferenceModalClose) {
             closeConferenceModal();
         }
     });
 
+    summerSchoolModal.addEventListener("click", event => {
+        if (event.target === summerSchoolModal || event.target === summerSchoolModalClose) {
+            closeSummerSchoolModal();
+        }
+    });
+
     document.addEventListener("keydown", event => {
-        if (event.key === "Escape" && conferenceModal.classList.contains("open")) {
-            closeConferenceModal();
+        if (event.key === "Escape") {
+            if (conferenceModal.classList.contains("open")) {
+                closeConferenceModal();
+            }
+            if (summerSchoolModal.classList.contains("open")) {
+                closeSummerSchoolModal();
+            }
         }
     });
 });
